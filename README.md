@@ -22,3 +22,9 @@ MatSidenavModule, MatListModule, MatInputModule, MatButtonModule, MatSelectModul
 ```
 
 Then I just edited app.component.html/scss/ts
+
+Or just clone this and run 
+
+```
+npm install
+```
