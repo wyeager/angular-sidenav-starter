@@ -1,20 +1,68 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<mat-toolbar color="primary" class="app-toolbar" [class.transitioning]="isTransitioning">
+  <mat-toolbar-row>
+    <button mat-button class="hamburger" [class.starting]="isStarting" (click)="sidenav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>Welcome to {{ title }}</span>
+  </mat-toolbar-row>
+</mat-toolbar>
 
+<mat-sidenav-container class="sidenav-container" [class.starting]="isStarting" [class.has-floating-toc]="hasFloatingToc" role="main">
+
+  <mat-sidenav [ngClass]="{'collapsed': !isSideBySide}" #sidenav class="sidenav" [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="isOpened">
+    <mat-nav-list>
+      <a mat-list-item href="#">Link 1</a>
+      <a mat-list-item href="#">Link 2</a>
+      <a mat-list-item href="#">Link 3</a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <main class="sidenav-content" [id]="pageId" role="main">
+      <p>
+          Port yardarm fire in the hole sheet gangway nipper crimp pink holystone quarterdeck gally wherry line hempen halter heave to matey ahoy. Transom squiffy lass hang the jib Letter of Marque pirate carouser clap of thunder smartly rigging Pirate Round gaff scurvy lookout fire in the hole six pounders rutters. Bilge water long boat Shiver me timbers hang the jib black spot dead men tell no tales parley list reef yawl barkadeer mizzen draught rutters lateen sail interloper Corsair. Interloper transom nipper quarter ho hulk Chain Shot tender prow lookout gunwalls hearties jib keel lad swing the lead Brethren of the Coast. Tack hempen halter poop deck to go on account hang the jib hogshead nipperkin interloper sloop spirits crow's nest grapple code of conduct Buccaneer Nelsons folly knave splice the main brace.
+      </p>
+      <p>
+          Rope's end tack stern maroon lad hail-shot mutiny lugsail dead men tell no tales league lookout trysail Jack Ketch blow the man down fore skysail schooner. Strike colors gabion mizzenmast bring a spring upon her cable haul wind keelhaul barkadeer yo-ho-ho rum cutlass Davy Jones' Locker hardtack Sail ho bucko log spike yardarm. Broadside tackle parrel dance the hempen jig salmagundi jack Yellow Jack main sheet bring a spring upon her cable Jack Ketch tender gibbet topmast belay chandler skysail black jack. Nelsons folly Gold Road man-of-war galleon keel starboard piracy ho jury mast dance the hempen jig bilge keelhaul trysail ahoy cable fore gaff. Matey holystone loaded to the gunwalls gally hardtack jolly boat furl smartly wench sloop rope's end heave to plunder no prey, no pay skysail snow pinnace.
+      </p>
+      <p>    
+          Rutters tack hail-shot crack Jennys tea cup poop deck weigh anchor cable warp Jack Tar fire in the hole keelhaul heave to hang the jib reef hardtack grog bilge water. Nipperkin lass haul wind coffer chandler chantey Chain Shot crimp matey American Main salmagundi chase loaded to the gunwalls fluke tack wherry bilge. Mizzen league belaying pin lugger clap of thunder topmast run a shot across the bow hogshead gibbet scallywag booty landlubber or just lubber Admiral of the Black holystone grapple shrouds starboard. Capstan interloper loaded to the gunwalls mizzenmast sutler yo-ho-ho crow's nest scurvy lass ahoy strike colors marooned bring a spring upon her cable boom piracy Davy Jones' Locker furl. Black jack stern quarter pink Barbary Coast skysail spanker cackle fruit salmagundi walk the plank nipper Jack Tar reef scurvy lugger matey fire ship.
+      </p>    
+      <p>
+          Chandler coxswain pillage prow lugsail scuttle overhaul ahoy Sink me code of conduct belaying pin hogshead yard boom long clothes crimp poop deck. Lad galleon bilge haul wind log fore crimp jury mast squiffy Shiver me timbers strike colors red ensign American Main grapple bilge rat belaying pin provost. Driver log Jolly Roger lanyard Davy Jones' Locker American Main grog blossom lee jib splice the main brace man-of-war scourge of the seven seas skysail scallywag squiffy yard grapple. Sea Legs prow take a caulk flogging clipper fire ship Jolly Roger fire in the hole bilged on her anchor interloper killick dance the hempen jig boatswain fathom code of conduct scallywag yard. Booty handsomely parrel sheet fire ship Privateer topsail gaff mizzenmast case shot jury mast gally squiffy mutiny long clothes me pinnace.
+      </p>
+      <p>    
+          Splice the main brace no prey, no pay flogging skysail belaying pin pink piracy clipper marooned execution dock mizzenmast scallywag bucko matey weigh anchor starboard reef sails. Jack Ketch quarter Shiver me timbers lugger Jack Tar pinnace hang the jib heave to splice the main brace pillage rutters crow's nest quarterdeck starboard take a caulk heave down fluke. Scuppers coffer jack pressgang chase guns ballast tender starboard take a caulk lanyard bilged on her anchor scourge of the seven seas grapple rum tackle league holystone. Doubloon swab wherry belaying pin landlubber or just lubber scuttle mizzen lateen sail coffer gaff long clothes hogshead rigging scallywag cutlass avast blow the man down. Run a rig ye hulk flogging strike colors rutters barque crow's nest knave aft reef sails ahoy heave to Admiral of the Black spanker clap of thunder Chain Shot.
+      </p>
+      <p>
+          Port yardarm fire in the hole sheet gangway nipper crimp pink holystone quarterdeck gally wherry line hempen halter heave to matey ahoy. Transom squiffy lass hang the jib Letter of Marque pirate carouser clap of thunder smartly rigging Pirate Round gaff scurvy lookout fire in the hole six pounders rutters. Bilge water long boat Shiver me timbers hang the jib black spot dead men tell no tales parley list reef yawl barkadeer mizzen draught rutters lateen sail interloper Corsair. Interloper transom nipper quarter ho hulk Chain Shot tender prow lookout gunwalls hearties jib keel lad swing the lead Brethren of the Coast. Tack hempen halter poop deck to go on account hang the jib hogshead nipperkin interloper sloop spirits crow's nest grapple code of conduct Buccaneer Nelsons folly knave splice the main brace.
+      </p>
+      <p>
+          Rope's end tack stern maroon lad hail-shot mutiny lugsail dead men tell no tales league lookout trysail Jack Ketch blow the man down fore skysail schooner. Strike colors gabion mizzenmast bring a spring upon her cable haul wind keelhaul barkadeer yo-ho-ho rum cutlass Davy Jones' Locker hardtack Sail ho bucko log spike yardarm. Broadside tackle parrel dance the hempen jig salmagundi jack Yellow Jack main sheet bring a spring upon her cable Jack Ketch tender gibbet topmast belay chandler skysail black jack. Nelsons folly Gold Road man-of-war galleon keel starboard piracy ho jury mast dance the hempen jig bilge keelhaul trysail ahoy cable fore gaff. Matey holystone loaded to the gunwalls gally hardtack jolly boat furl smartly wench sloop rope's end heave to plunder no prey, no pay skysail snow pinnace.
+      </p>
+      <p>    
+          Rutters tack hail-shot crack Jennys tea cup poop deck weigh anchor cable warp Jack Tar fire in the hole keelhaul heave to hang the jib reef hardtack grog bilge water. Nipperkin lass haul wind coffer chandler chantey Chain Shot crimp matey American Main salmagundi chase loaded to the gunwalls fluke tack wherry bilge. Mizzen league belaying pin lugger clap of thunder topmast run a shot across the bow hogshead gibbet scallywag booty landlubber or just lubber Admiral of the Black holystone grapple shrouds starboard. Capstan interloper loaded to the gunwalls mizzenmast sutler yo-ho-ho crow's nest scurvy lass ahoy strike colors marooned bring a spring upon her cable boom piracy Davy Jones' Locker furl. Black jack stern quarter pink Barbary Coast skysail spanker cackle fruit salmagundi walk the plank nipper Jack Tar reef scurvy lugger matey fire ship.
+      </p>    
+      <p>
+          Chandler coxswain pillage prow lugsail scuttle overhaul ahoy Sink me code of conduct belaying pin hogshead yard boom long clothes crimp poop deck. Lad galleon bilge haul wind log fore crimp jury mast squiffy Shiver me timbers strike colors red ensign American Main grapple bilge rat belaying pin provost. Driver log Jolly Roger lanyard Davy Jones' Locker American Main grog blossom lee jib splice the main brace man-of-war scourge of the seven seas skysail scallywag squiffy yard grapple. Sea Legs prow take a caulk flogging clipper fire ship Jolly Roger fire in the hole bilged on her anchor interloper killick dance the hempen jig boatswain fathom code of conduct scallywag yard. Booty handsomely parrel sheet fire ship Privateer topsail gaff mizzenmast case shot jury mast gally squiffy mutiny long clothes me pinnace.
+      </p>
+      <p>    
+          Splice the main brace no prey, no pay flogging skysail belaying pin pink piracy clipper marooned execution dock mizzenmast scallywag bucko matey weigh anchor starboard reef sails. Jack Ketch quarter Shiver me timbers lugger Jack Tar pinnace hang the jib heave to splice the main brace pillage rutters crow's nest quarterdeck starboard take a caulk heave down fluke. Scuppers coffer jack pressgang chase guns ballast tender starboard take a caulk lanyard bilged on her anchor scourge of the seven seas grapple rum tackle league holystone. Doubloon swab wherry belaying pin landlubber or just lubber scuttle mizzen lateen sail coffer gaff long clothes hogshead rigging scallywag cutlass avast blow the man down. Run a rig ye hulk flogging strike colors rutters barque crow's nest knave aft reef sails ahoy heave to Admiral of the Black spanker clap of thunder Chain Shot.
+      </p>
+      <p>
+          Port yardarm fire in the hole sheet gangway nipper crimp pink holystone quarterdeck gally wherry line hempen halter heave to matey ahoy. Transom squiffy lass hang the jib Letter of Marque pirate carouser clap of thunder smartly rigging Pirate Round gaff scurvy lookout fire in the hole six pounders rutters. Bilge water long boat Shiver me timbers hang the jib black spot dead men tell no tales parley list reef yawl barkadeer mizzen draught rutters lateen sail interloper Corsair. Interloper transom nipper quarter ho hulk Chain Shot tender prow lookout gunwalls hearties jib keel lad swing the lead Brethren of the Coast. Tack hempen halter poop deck to go on account hang the jib hogshead nipperkin interloper sloop spirits crow's nest grapple code of conduct Buccaneer Nelsons folly knave splice the main brace.
+      </p>
+      <p>
+          Rope's end tack stern maroon lad hail-shot mutiny lugsail dead men tell no tales league lookout trysail Jack Ketch blow the man down fore skysail schooner. Strike colors gabion mizzenmast bring a spring upon her cable haul wind keelhaul barkadeer yo-ho-ho rum cutlass Davy Jones' Locker hardtack Sail ho bucko log spike yardarm. Broadside tackle parrel dance the hempen jig salmagundi jack Yellow Jack main sheet bring a spring upon her cable Jack Ketch tender gibbet topmast belay chandler skysail black jack. Nelsons folly Gold Road man-of-war galleon keel starboard piracy ho jury mast dance the hempen jig bilge keelhaul trysail ahoy cable fore gaff. Matey holystone loaded to the gunwalls gally hardtack jolly boat furl smartly wench sloop rope's end heave to plunder no prey, no pay skysail snow pinnace.
+      </p>
+      <p>    
+          Rutters tack hail-shot crack Jennys tea cup poop deck weigh anchor cable warp Jack Tar fire in the hole keelhaul heave to hang the jib reef hardtack grog bilge water. Nipperkin lass haul wind coffer chandler chantey Chain Shot crimp matey American Main salmagundi chase loaded to the gunwalls fluke tack wherry bilge. Mizzen league belaying pin lugger clap of thunder topmast run a shot across the bow hogshead gibbet scallywag booty landlubber or just lubber Admiral of the Black holystone grapple shrouds starboard. Capstan interloper loaded to the gunwalls mizzenmast sutler yo-ho-ho crow's nest scurvy lass ahoy strike colors marooned bring a spring upon her cable boom piracy Davy Jones' Locker furl. Black jack stern quarter pink Barbary Coast skysail spanker cackle fruit salmagundi walk the plank nipper Jack Tar reef scurvy lugger matey fire ship.
+      </p>    
+      <p>
+          Chandler coxswain pillage prow lugsail scuttle overhaul ahoy Sink me code of conduct belaying pin hogshead yard boom long clothes crimp poop deck. Lad galleon bilge haul wind log fore crimp jury mast squiffy Shiver me timbers strike colors red ensign American Main grapple bilge rat belaying pin provost. Driver log Jolly Roger lanyard Davy Jones' Locker American Main grog blossom lee jib splice the main brace man-of-war scourge of the seven seas skysail scallywag squiffy yard grapple. Sea Legs prow take a caulk flogging clipper fire ship Jolly Roger fire in the hole bilged on her anchor interloper killick dance the hempen jig boatswain fathom code of conduct scallywag yard. Booty handsomely parrel sheet fire ship Privateer topsail gaff mizzenmast case shot jury mast gally squiffy mutiny long clothes me pinnace.
+      </p>
+      <p>    
+          Splice the main brace no prey, no pay flogging skysail belaying pin pink piracy clipper marooned execution dock mizzenmast scallywag bucko matey weigh anchor starboard reef sails. Jack Ketch quarter Shiver me timbers lugger Jack Tar pinnace hang the jib heave to splice the main brace pillage rutters crow's nest quarterdeck starboard take a caulk heave down fluke. Scuppers coffer jack pressgang chase guns ballast tender starboard take a caulk lanyard bilged on her anchor scourge of the seven seas grapple rum tackle league holystone. Doubloon swab wherry belaying pin landlubber or just lubber scuttle mizzen lateen sail coffer gaff long clothes hogshead rigging scallywag cutlass avast blow the man down. Run a rig ye hulk flogging strike colors rutters barque crow's nest knave aft reef sails ahoy heave to Admiral of the Black spanker clap of thunder Chain Shot.
+      </p>
+  </main>
+
+</mat-sidenav-container>
